@@ -1,0 +1,9 @@
+.DS_Store
+.env
+
+# NPM
+node_modules
+
+# Build outputs
+dist
+generated
