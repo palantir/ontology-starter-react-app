@@ -39,9 +39,9 @@ A simple skeleton application to get you started on React/TypeScript development
 
     ```
     # Replace variables with your CI/CD environment variable injection mechanism
-    echo FOUNDRY_CLIENT_ID=${FOUNDRY_CLIENT_ID} >> .env
-    echo FOUNDRY_PRODUCTION_API_URL=${FOUNDRY_PRODUCTION_API_URL} >> .env
-    echo PRODUCTION_REDIRECT_URL=${PRODUCTION_REDIRECT_URL} >> .env
+    echo FOUNDRY_CLIENT_ID="$FOUNDRY_CLIENT_ID" >> .env
+    echo FOUNDRY_PRODUCTION_API_URL="$FOUNDRY_PRODUCTION_API_URL" >> .env
+    echo PRODUCTION_REDIRECT_URL="$PRODUCTION_REDIRECT_URL" >> .env
     ```
 
 1. Run `npm run build`
