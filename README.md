@@ -5,6 +5,7 @@ A simple skeleton application to get you started on React/TypeScript development
 ## Prerequisites
 
 1. Make sure you're on Node >= 16.15.0
+   1. You can run `node -v` to check the version of Node you're using
 
 ## Getting started
 
