@@ -9,8 +9,10 @@ A simple skeleton application to get you started on React/TypeScript development
 ## Getting started
 
 1. Copy or make a fork of this repository (you can delete `.policy.yml`)
-1. Create an application via the Foundry Developer Console, and add `https://localhost:8080/auth/callback` as a redirect URL when asked for one. Once the application has been created, come back to these instructions.
-    1. If you know where your application is getting deployed, you can add your production URL as well: `https://example.com/auth/callback`
+1. Create an application via the Foundry Developer Console with the configuration below. Once the application has been created, come back to these instructions.
+    1. Select client side application (creates a public client) when asked what type of application you're building
+    2. Add `https://localhost:8080/auth/callback` as a redirect URL when asked for one
+    3. If you know where your application is getting deployed, you can add your production URL as well: `https://example.com/auth/callback`
 1. Set up a `.env` file in the root of this project with the following contents (replace everything in `<>`):
 
     ```
