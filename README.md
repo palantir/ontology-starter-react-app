@@ -23,6 +23,9 @@ A simple skeleton application to get you started on React/TypeScript development
     LOCALHOST_REDIRECT_URL=https://localhost:8080/auth/callback
     PRODUCTION_REDIRECT_URL=<Your production URL, e.g. https://example.com>/auth/callback
     ```
+    
+    a. You can find your Client ID in either the Quickstart guide for the SDK or in the Permissions & OAuth page
+    b. If you don't have a production URL yet, you can leave `PRODUCTION_REDIRECT_URL` out. It is only read when you set `NODE_ENV=production`
 
 1. Run `npm install`
 1. Follow the instructions in the Foundry Developer Console to install your application's Ontology SDK via the application-specific NPM registry
