@@ -55,11 +55,11 @@ A simple skeleton application to get you started on React/TypeScript development
 
 ## Troubleshooting
 
-### Help! `npm ERR! code E401` / `401 Unauthorized`
+### I'm getting `npm ERR! code E401` / `401 Unauthorized` when running `npm install`
 
 When following the instructions in the Foundry Developer Console make sure to set up your Foundry API token in your local machine environment correctly in order to install your application's Ontology SDK via the application-specific NPM registry.
 
-### Help! `npm ERR! code SELF_SIGNED_CERT_IN_CHAIN` / `UNABLE_TO_GET_ISSUER_CERT_LOCALLY`
+### I'm seeing `npm ERR! code SELF_SIGNED_CERT_IN_CHAIN` / `UNABLE_TO_GET_ISSUER_CERT_LOCALLY` when running `npm run dev`
 
 During local development API requests are routed through a [webpack-dev-server proxy](https://webpack.js.org/configuration/dev-server/#devserverproxy) via [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) to avoid Cross-Origin Resource Sharing (CORS) issues during development. These errors can happen if your production Foundry instance certificate is signed by a custom certificate authority (CA) that Node.js has not been set up to trust correctly.
 
