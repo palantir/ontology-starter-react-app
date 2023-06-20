@@ -16,18 +16,10 @@ A simple skeleton application to get you started on React/TypeScript development
     1. Add `https://localhost:8080/auth/callback` as a redirect URL when asked for one
     1. If you know where your application is getting deployed, you can add your production URL as well: `https://example.app.com/auth/callback`
 1. Follow the instructions in the Foundry Developer Console to generate and then install your application's Ontology SDK via the application-specific NPM registry
-1. Set up a `.env` file in the root of this project with the following contents (replace everything in `<>`):
-
-    ```
-    FOUNDRY_CLIENT_ID=<Client ID for your application>
-    FOUNDRY_LOCALHOST_API_URL=https://localhost:8080
-    FOUNDRY_PRODUCTION_API_URL=<Your Foundry instance base URL, e.g. https://example.palantir.com>
-    LOCALHOST_REDIRECT_URL=https://localhost:8080/auth/callback
-    PRODUCTION_REDIRECT_URL=<Your production URL, e.g. https://example.app.com>/auth/callback
-    ```
+1. Run `mv .env.sample .env` to start setting up your environment variables, and fill in the fields marked with `<>`
 
     a. You can find your Client ID in either the Quickstart guide for the SDK or in the Permissions & OAuth page
-    b. If you don't have a production URL yet, you can leave `PRODUCTION_REDIRECT_URL` out. It is only read when you set `NODE_ENV=production`
+    b. If you don't have a production URL yet, you can leave `PRODUCTION_REDIRECT_URL` out. It is only read when you set `NODE_ENV=production` (i.e. when you run `npm run build`)
 
 1. Update the following files with your Ontology SDK and Object types:
     1. Update [`src/utils/client.ts`](./src/utils/client.ts) with the correct package name
