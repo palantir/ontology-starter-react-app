@@ -90,7 +90,7 @@ module.exports = {
         server: "https",
         proxy: [
             {
-                target: process.env.FOUNDRY_PRODUCTION_API_URL,
+                target: process.env.FOUNDRY_ONTOLOGY_API_URL,
                 context: ["/multipass/api/**", "/api/**"],
                 changeOrigin: true,
                 secure: true,
