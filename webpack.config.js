@@ -98,7 +98,7 @@ module.exports = {
                 target: process.env.FOUNDRY_ONTOLOGY_API_URL,
                 context: ["/multipass/api/**", "/api/**"],
                 changeOrigin: true,
-                secure: false,
+                secure: true,
             },
         ],
     },
