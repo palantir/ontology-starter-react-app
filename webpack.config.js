@@ -2,7 +2,7 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-require("dotenv").config();
+require("dotenv").config({ path: process.env.NODE_ENV === "production" ? ".env.production" : ".env.development" });
 
 module.exports = {
     entry: {
@@ -90,6 +90,7 @@ module.exports = {
         server: "https",
         proxy: [
             {
+                // This proxies calls from the browser to the configured Foundry instance
                 target: process.env.FOUNDRY_ONTOLOGY_API_URL,
                 context: ["/multipass/api/**", "/api/**"],
                 changeOrigin: true,
