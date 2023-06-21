@@ -2,8 +2,12 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-require("dotenv").config({ path: process.env.NODE_ENV === "production" ? ".env.production" : ".env.development" });
+const dotEnvConfig = {
+    path: process.env.NODE_ENV === "production" ? "./.env.production" : "./.env.development",
+};
+require("dotenv").config(dotEnvConfig);
 
+console.log(process.env);
 module.exports = {
     entry: {
         app: ["./src/app.tsx", "./src/app.scss"],
@@ -31,7 +35,7 @@ module.exports = {
             title: "API Example – React",
             template: path.resolve(__dirname, "src/index.html"),
         }),
-        new Dotenv(),
+        new Dotenv(dotEnvConfig),
     ],
     module: {
         rules: [
@@ -94,7 +98,7 @@ module.exports = {
                 target: process.env.FOUNDRY_ONTOLOGY_API_URL,
                 context: ["/multipass/api/**", "/api/**"],
                 changeOrigin: true,
-                secure: true,
+                secure: false,
             },
         ],
     },
