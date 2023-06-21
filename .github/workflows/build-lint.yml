@@ -30,11 +30,26 @@ jobs:
                   mkdir -p build/@replace-me/sdk
                   echo "{ \"name\": \"@replace-me/sdk\", \"main\": \"index.js\" }" >> build/@replace-me/sdk/package.json
                   echo "export interface ReplaceMeObject { myProperty: any; __rid: string; }
-                  export interface ReplaceMeObjectImpl { all: () => Promise<ReplaceMeObject[]>; }
-                  export declare class Ontology { get objects(): { ReplaceMeObject: ReplaceMeObjectImpl } }
-                  export declare class FoundryBrowserClient { constructor(options: any); get ontology(): Ontology; get auth(): any; }
+                  export interface ReplaceMeObjectImpl { 
+                    ReplaceMeObject: {
+                      all: () => Promise<ReplaceMeObject[]>;
+                    }
+                  }
+                  export declare class Ontology {
+                    get objects(): ReplaceMeObjectImpl;
+                  }
+                  export declare class FoundryBrowserClient {
+                    constructor(options: any);
+                    get ontology(): Ontology;
+                    get auth(): any;
+                  }
                   " >> build/@replace-me/sdk/index.d.ts
-                  echo "class FoundryBrowserClient { constructor(options) {} get ontology() { return {}; } }" >> build/@replace-me/sdk/index.js
+                  echo "class FoundryBrowserClient {
+                    constructor() {}
+                    get ontology() {
+                      return {};
+                    }
+                  }" >> build/@replace-me/sdk/index.js
                   cd build/@replace-me/sdk
                   npm link
                   cd ~/
