@@ -8,7 +8,7 @@
         "dev": "webpack serve",
         "build": "NODE_ENV=production webpack",
         "lint": "run-p lint:*",
-        "lint:eslint": "eslint src/**",
+        "lint:eslint": "eslint src/**/*.ts*",
         "lint:prettier": "prettier src/**/*.ts*",
         "lint:stylelint": "stylelint 'src/**/*.scss'",
         "lint-fix": "run-s lint-fix:*",
