@@ -25,7 +25,7 @@ export const HomePage: React.FC = () => {
                     navigate("/login");
                 });
         }
-    }, []);
+    }, [navigate]);
 
     // Do an initial load of all Objects of a particular type
     useEffect(() => {
