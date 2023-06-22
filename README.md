@@ -37,7 +37,6 @@ A simple skeleton application to get you started on React/TypeScript development
     ```
     # Replace variables with your CI/CD environment variable injection mechanism
     echo FOUNDRY_CLIENT_ID="$FOUNDRY_CLIENT_ID" >> .env.production
-    echo FOUNDRY_ONTOLOGY_API_URL="$FOUNDRY_ONTOLOGY_API_URL" >> .env.production
     echo FOUNDRY_API_URL="$FOUNDRY_ONTOLOGY_API_URL" >> .env.production
     echo APPLICATION_REDIRECT_URL="$PRODUCTION_REDIRECT_URL" >> .env.production
     ```

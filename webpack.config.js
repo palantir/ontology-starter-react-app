@@ -95,7 +95,7 @@ module.exports = {
         proxy: [
             {
                 // This proxies calls from the browser to the configured Foundry instance
-                target: process.env.FOUNDRY_ONTOLOGY_API_URL,
+                target: process.env.API_PROXY_TARGET_URL,
                 context: ["/multipass/api/**", "/api/**"],
                 changeOrigin: true,
                 secure: true,
