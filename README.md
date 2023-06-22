@@ -16,18 +16,9 @@ A simple skeleton application to get you started on React/TypeScript development
     1. Add `https://localhost:8080/auth/callback` as a redirect URL when asked for one
     1. If you know where your application is getting deployed, you can add your production URL as well: `https://example.app.com/auth/callback`
 1. Follow the instructions in the Foundry Developer Console to generate and then install your application's Ontology SDK via the application-specific NPM registry
-1. Set up a `.env` file in the root of this project with the following contents (replace everything in `<>`):
-
-    ```
-    FOUNDRY_CLIENT_ID=<Client ID for your application>
-    FOUNDRY_LOCALHOST_API_URL=https://localhost:8080
-    FOUNDRY_PRODUCTION_API_URL=<Your Foundry instance base URL, e.g. https://example.palantir.com>
-    LOCALHOST_REDIRECT_URL=https://localhost:8080/auth/callback
-    PRODUCTION_REDIRECT_URL=<Your production URL, e.g. https://example.app.com>/auth/callback
-    ```
+1. Run `mv .env.development.sample .env.development` to start setting up your environment variables, and fill in the fields marked with `<>`
 
     a. You can find your Client ID in either the Quickstart guide for the SDK or in the Permissions & OAuth page
-    b. If you don't have a production URL yet, you can leave `PRODUCTION_REDIRECT_URL` out. It is only read when you set `NODE_ENV=production`
 
 1. Update the following files with your Ontology SDK and Object types:
     1. Update [`src/utils/client.ts`](./src/utils/client.ts) with the correct package name
@@ -38,16 +29,16 @@ A simple skeleton application to get you started on React/TypeScript development
 
 ## Deploying to production
 
-1. Store `FOUNDRY_CLIENT_ID`, `FOUNDRY_PRODUCTION_API_URL`, and `PRODUCTION_REDIRECT_URL` in your CI/CD environment secret management system (see below for example documentation)
+1. Store `FOUNDRY_CLIENT_ID`, `FOUNDRY_API_URL`, and `APPLICATION_REDIRECT_URL` in your CI/CD environment secret management system (see below for example documentation)
     1. [CircleCi](https://circleci.com/docs/env-vars/#private-keys-and-secrets)
     1. [GitHub Actions](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
 1. Before building your application, write an `.env` file to disk:
 
     ```
     # Replace variables with your CI/CD environment variable injection mechanism
-    echo FOUNDRY_CLIENT_ID="$FOUNDRY_CLIENT_ID" >> .env
-    echo FOUNDRY_PRODUCTION_API_URL="$FOUNDRY_PRODUCTION_API_URL" >> .env
-    echo PRODUCTION_REDIRECT_URL="$PRODUCTION_REDIRECT_URL" >> .env
+    echo FOUNDRY_CLIENT_ID="$FOUNDRY_CLIENT_ID" >> .env.production
+    echo FOUNDRY_API_URL="$FOUNDRY_API_URL" >> .env.production
+    echo APPLICATION_REDIRECT_URL="$APPLICATION_REDIRECT_URL" >> .env.production
     ```
 
 1. Run `npm run build`

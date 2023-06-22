@@ -2,7 +2,10 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-require("dotenv").config();
+const dotEnvConfig = {
+    path: process.env.NODE_ENV === "production" ? "./.env.production" : "./.env.development",
+};
+require("dotenv").config(dotEnvConfig);
 
 module.exports = {
     entry: {
@@ -31,7 +34,7 @@ module.exports = {
             title: "API Example – React",
             template: path.resolve(__dirname, "src/index.html"),
         }),
-        new Dotenv(),
+        new Dotenv(dotEnvConfig),
     ],
     module: {
         rules: [
@@ -90,7 +93,8 @@ module.exports = {
         server: "https",
         proxy: [
             {
-                target: process.env.FOUNDRY_PRODUCTION_API_URL,
+                // This proxies calls from the browser to the configured Foundry instance
+                target: process.env.API_PROXY_TARGET_URL,
                 context: ["/multipass/api/**", "/api/**"],
                 changeOrigin: true,
                 secure: true,

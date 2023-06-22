@@ -1,5 +1,5 @@
 .DS_Store
-.env
+.env*
 
 # NPM
 node_modules
