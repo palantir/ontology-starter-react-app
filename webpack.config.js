@@ -7,7 +7,6 @@ const dotEnvConfig = {
 };
 require("dotenv").config(dotEnvConfig);
 
-console.log(process.env);
 module.exports = {
     entry: {
         app: ["./src/app.tsx", "./src/app.scss"],

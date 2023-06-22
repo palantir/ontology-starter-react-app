@@ -29,7 +29,7 @@ A simple skeleton application to get you started on React/TypeScript development
 
 ## Deploying to production
 
-1. Store `FOUNDRY_CLIENT_ID`, `FOUNDRY_ONTOLOGY_API_URL`, and `APPLICATION_REDIRECT_URL` in your CI/CD environment secret management system (see below for example documentation)
+1. Store `FOUNDRY_CLIENT_ID`, `FOUNDRY_API_URL`, and `APPLICATION_REDIRECT_URL` in your CI/CD environment secret management system (see below for example documentation)
     1. [CircleCi](https://circleci.com/docs/env-vars/#private-keys-and-secrets)
     1. [GitHub Actions](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
 1. Before building your application, write an `.env` file to disk:
@@ -37,8 +37,8 @@ A simple skeleton application to get you started on React/TypeScript development
     ```
     # Replace variables with your CI/CD environment variable injection mechanism
     echo FOUNDRY_CLIENT_ID="$FOUNDRY_CLIENT_ID" >> .env.production
-    echo FOUNDRY_API_URL="$FOUNDRY_ONTOLOGY_API_URL" >> .env.production
-    echo APPLICATION_REDIRECT_URL="$PRODUCTION_REDIRECT_URL" >> .env.production
+    echo FOUNDRY_API_URL="$FOUNDRY_API_URL" >> .env.production
+    echo APPLICATION_REDIRECT_URL="$APPLICATION_REDIRECT_URL" >> .env.production
     ```
 
 1. Run `npm run build`
