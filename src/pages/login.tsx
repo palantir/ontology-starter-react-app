@@ -1,7 +1,6 @@
+import "./login.scss";
 import React, { useCallback, useState } from "react";
 import { Navigate } from "react-router-dom";
-
-import "./login.scss";
 import { client } from "../utils/client";
 
 export const LoginPage: React.FC = () => {

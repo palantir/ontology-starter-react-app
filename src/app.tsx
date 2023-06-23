@@ -1,8 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HomePage } from "./pages/home";
 import { AuthCallback } from "./pages/authCallback";
+import { HomePage } from "./pages/home";
 import { LoginPage } from "./pages/login";
 
 const root = createRoot(document.getElementById("root")!);

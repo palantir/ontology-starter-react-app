@@ -1,9 +1,8 @@
+import "./home.scss";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ReplaceMeObject } from "@replace-me/sdk/ontology";
 import { client } from "../utils/client";
-import { ReplaceMeObject } from "@replace-me/sdk";
-
-import "./home.scss";
 
 export const HomePage: React.FC = () => {
     const [objectList, setObjectList] = useState<
