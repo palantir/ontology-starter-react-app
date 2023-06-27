@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { client } from "../utils/client";
-import { ReplaceMeObject } from "@replace-me/sdk";
+import { Country } from "@ontology-starter/sdk/ontology";
 
 import "./home.scss";
 
 export const HomePage: React.FC = () => {
     const [objectList, setObjectList] = useState<
-        { status: "loading" } | { status: "loaded"; value: ReplaceMeObject[] } | { status: "failed_loading" }
+        { status: "loading" } | { status: "loaded"; value: Country[] } | { status: "failed_loading" }
     >({ status: "loading" });
     const navigate = useNavigate();
 
-    // Handle token refresh
+    // Handle token refresh by signing in.
     const [token, setToken] = useState(client.auth.token);
     useEffect(() => {
         if (client.auth.token == null) {
             client.auth
-                .refresh()
+                .signIn()
                 .then(() => {
                     setToken(client.auth.token);
                 })
@@ -30,7 +30,7 @@ export const HomePage: React.FC = () => {
     // Do an initial load of all Objects of a particular type
     useEffect(() => {
         if (token != null) {
-            client.ontology.objects.ReplaceMeObject.all().then(objects =>
+            client.ontology.objects.Country.all().then((objects: Country[]) =>
                 setObjectList({ value: objects, status: "loaded" }),
             );
         }
@@ -43,7 +43,7 @@ export const HomePage: React.FC = () => {
             {objectList.status === "loaded" && (
                 <ul>
                     {objectList.value.map(object => (
-                        <li key={object.__rid}>{object.myProperty}</li>
+                        <li key={object.__rid}>{object.countryName}</li>
                     ))}
                 </ul>
             )}
