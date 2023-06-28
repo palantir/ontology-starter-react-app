@@ -11,7 +11,7 @@ export const HomePage: React.FC = () => {
     >({ status: "loading" });
     const navigate = useNavigate();
 
-    // Handle token refresh by signing in.
+    // Handle token refresh by making sure the user is signed in
     const [token, setToken] = useState(client.auth.token);
     useEffect(() => {
         if (client.auth.token == null) {
