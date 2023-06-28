@@ -14,7 +14,7 @@ export const LoginPage: React.FC = () => {
         try {
             // Initiate the OAuth flow, which will redirect the user to log into Foundry
             // Once the login has completed, the user will be redirected back to the route defined via the
-            // LOCALHOST_REDIRECT_URL variable in .env
+            // APPLICATION_REDIRECT_URL variable in .env.development
             await client.auth.signIn();
         } catch (err: any) {
             setError(err.message ?? err);

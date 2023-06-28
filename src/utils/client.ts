@@ -1,5 +1,5 @@
 // Replace the package name with your application's package name instead.
-import { FoundryBrowserClient } from "@replace-me/sdk";
+import { FoundryBrowserClient } from "@ontology-starter/sdk";
 
 /**
  * Initialize the client to interact with the Ontology SDK
