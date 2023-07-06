@@ -21,39 +21,8 @@ jobs:
             - name: Set up environment variables
               run: |
                   echo FOUNDRY_CLIENT_ID="test-client-id" >> .env.production
-                  echo FOUNDRY_ONTOLOGY_API_URL="test-url" >> .env.production
                   echo FOUNDRY_API_URL="test-url" >> .env.production
                   echo APPLICATION_REDIRECT_URL="https://localhost:8080/auth/callback" >> .env.production
-
-            - name: Set up dummy package to check compilation
-              run: |
-                  mkdir -p build/@replace-me/sdk
-                  echo "{ \"name\": \"@replace-me/sdk\", \"main\": \"index.js\" }" >> build/@replace-me/sdk/package.json
-                  echo "export interface ReplaceMeObject { myProperty: any; __rid: string; }
-                  export interface ReplaceMeObjectImpl { 
-                    ReplaceMeObject: {
-                      all: () => Promise<ReplaceMeObject[]>;
-                    }
-                  }
-                  export declare class Ontology {
-                    get objects(): ReplaceMeObjectImpl;
-                  }
-                  export declare class FoundryBrowserClient {
-                    constructor(options: any);
-                    get ontology(): Ontology;
-                    get auth(): any;
-                  }
-                  " >> build/@replace-me/sdk/index.d.ts
-                  echo "class FoundryBrowserClient {
-                    constructor() {}
-                    get ontology() {
-                      return {};
-                    }
-                  }" >> build/@replace-me/sdk/index.js
-                  cd build/@replace-me/sdk
-                  npm link
-                  cd ~/
-                  npm link @replace-me/sdk
 
             - name: Install dependencies
               run: npm install
