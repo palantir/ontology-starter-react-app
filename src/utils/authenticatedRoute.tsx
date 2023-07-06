@@ -21,7 +21,7 @@ export const AuthenticatedRoute: React.FC = () => {
                     navigate("/login");
                 });
         }
-    }, []);
+    }, [navigate]);
 
     if (token == null || token.isExpired) {
         return null;
