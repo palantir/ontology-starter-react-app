@@ -17,10 +17,13 @@
         "lint-fix:stylelint": "stylelint 'src/**/*.scss' --fix"
     },
     "dependencies": {
+        "@ontology-starter/sdk": "file:./sdk/sdk.tgz",
+        "buffer": "^6.0.3",
         "querystring-es3": "^0.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.11.1",
+        "stream-browserify": "^3.0.0",
         "tslib": "~2.5.0"
     },
     "devDependencies": {
