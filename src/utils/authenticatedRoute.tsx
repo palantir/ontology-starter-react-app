@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { client } from "./client";
 
+/**
+ * A component that can be used to wrap routes that require authentication.
+ * Nested routes may assume that a valid token is present.
+ */
 export const AuthenticatedRoute: React.FC = () => {
     const navigate = useNavigate();
     const [token, setToken] = useState(client.auth.token);
