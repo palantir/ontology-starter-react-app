@@ -15,6 +15,6 @@ export const AuthCallback: React.FC = () => {
             .signIn()
             .then(() => navigate("/"))
             .catch((error: any) => setError(error.message ?? error));
-    }, []);
+    }, [navigate]);
     return <div>{error != null ? error : "Authenticating…"}</div>;
 };
