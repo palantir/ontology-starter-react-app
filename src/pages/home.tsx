@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { client } from "../utils/client";
-import { Country } from "@ontology-starter/sdk/ontology";
+import { Country } from "@ontology-starter/sdk/ontology/objects";
 
 import "./home.scss";
 
