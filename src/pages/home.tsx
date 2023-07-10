@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { client } from "../utils/client";
 import { Country } from "@ontology-starter/sdk/ontology/objects";
 
@@ -9,32 +8,13 @@ export const HomePage: React.FC = () => {
     const [objectList, setObjectList] = useState<
         { status: "loading" } | { status: "loaded"; value: Country[] } | { status: "failed_loading" }
     >({ status: "loading" });
-    const navigate = useNavigate();
-
-    // Handle token refresh by making sure the user is signed in
-    const [token, setToken] = useState(client.auth.token);
-    useEffect(() => {
-        if (client.auth.token == null) {
-            client.auth
-                .signIn()
-                .then(() => {
-                    setToken(client.auth.token);
-                })
-                .catch(() => {
-                    // If we cannot refresh the token (i.e. the user is not logged in) we redirect to the login page
-                    navigate("/login");
-                });
-        }
-    }, []);
 
     // Do an initial load of all Objects of a particular type
     useEffect(() => {
-        if (token != null) {
-            client.ontology.objects.Country.all().then((objects: Country[]) =>
-                setObjectList({ value: objects, status: "loaded" }),
-            );
-        }
-    }, [token]);
+        client.ontology.objects.Country.all().then((objects: Country[]) =>
+            setObjectList({ value: objects, status: "loaded" }),
+        );
+    }, []);
 
     return (
         <div className="home">
