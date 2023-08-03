@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../utils/client";
-import { Country } from "@ontology-starter/sdk/ontology/objects";
+import { Country, Page } from "@ontology-starter/sdk/ontology/objects";
 import { ErrorVisitor, ListObjectsError, Result, visitError, isOk, isErr } from "@ontology-starter/sdk/";
 
 import "./home.scss";
@@ -11,9 +11,11 @@ export const HomePage: React.FC = () => {
     >({ status: "loading" });
 
     const getData = React.useCallback(async () => {
-        const result: Result<Country[], ListObjectsError> = await client.ontology.objects.Country.all();
+        const result: Result<Page<Country>, ListObjectsError> = await client.ontology.objects.Country.page({
+            pageSize: 10,
+        });
         if (isOk(result)) {
-            setObjectList({ value: result.value, status: "loaded" });
+            setObjectList({ value: result.value.data, status: "loaded" });
         } else if (isErr(result)) {
             const visitor: ErrorVisitor<ListObjectsError, void> = {
                 ObjectTypeNotFound: err => {
