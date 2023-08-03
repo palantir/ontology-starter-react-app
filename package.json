@@ -17,7 +17,7 @@
         "lint-fix:stylelint": "stylelint 'src/**/*.scss' --fix"
     },
     "dependencies": {
-        "@ontology-starter/sdk": "file:./sdk/sdk-0.11.0.tgz",
+        "@ontology-starter/sdk": "file:./sdk/sdk-0.13.0.tgz",
         "querystring-es3": "^0.2.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
