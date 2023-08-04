@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../utils/client";
 import { Country, Page } from "@ontology-starter/sdk/ontology/objects";
-import { ErrorVisitor, ListObjectsError, Result, visitError, isOk, isErr } from "@ontology-starter/sdk/";
+import { ErrorVisitor, ListObjectsError, Result, visitError, isOk, isErr } from "@ontology-starter/sdk";
 
 import "./home.scss";
 
