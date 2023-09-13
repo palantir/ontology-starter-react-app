@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../utils/client";
-import { Country, Page } from "@ontology-starter/sdk/ontology/objects";
-import { ErrorVisitor, ListObjectsError, Result, visitError, isOk, isErr } from "@ontology-starter/sdk";
+import { Country } from "@ontology-starter/sdk/ontology/objects";
+import { ErrorVisitor, ListObjectsError, Result, visitError, isOk, isErr, Page } from "@ontology-starter/sdk";
 
 import "./home.scss";
 
@@ -41,7 +41,7 @@ export const HomePage: React.FC = () => {
             {objectList.status === "loaded" && (
                 <ul>
                     {objectList.value.map(object => (
-                        <li key={object.__rid}>{object.countryName}</li>
+                        <li key={object.__primaryKey}>{object.countryName}</li>
                     ))}
                 </ul>
             )}
