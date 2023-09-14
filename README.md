@@ -23,7 +23,7 @@ A simple skeleton application to get you started on React/TypeScript development
 
 1. Update the following files with your Ontology SDK and Object types:
     1. Update [`src/utils/client.ts`](./src/utils/client.ts) with the correct package name
-    2. Update [`src/pages/home.tsx`](./src/pages/home.tsx) with the correct package name and Ontology Objects you want to use.
+    1. Update [`src/pages/home.tsx`](./src/pages/home.tsx) with the correct package name and Ontology Objects you want to use.
 1. Run `npm run dev`
 1. Go to http://localhost:8080
     1. There will be a browser warning saying the site is untrusted, which is expected since this sample repository runs a HTTPS server on localhost with a self-signed certificate. You can safely click continue to start developing.
