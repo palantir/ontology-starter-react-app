@@ -92,15 +92,5 @@ module.exports = {
         compress: true,
         historyApiFallback: true,
         port: 8080,
-        server: "https",
-        proxy: [
-            {
-                // This proxies calls from the browser to the configured Foundry instance
-                target: process.env.API_PROXY_TARGET_URL,
-                context: ["/multipass/api/**", "/api/**"],
-                changeOrigin: true,
-                secure: true,
-            },
-        ],
     },
 };
