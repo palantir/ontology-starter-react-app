@@ -2,8 +2,6 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const useLocalhostInCORS = true;
-
 const dotEnvConfig = {
     path: process.env.NODE_ENV === "production" ? "./.env.production" : "./.env.development",
 };
@@ -94,17 +92,5 @@ module.exports = {
         compress: true,
         historyApiFallback: true,
         port: 8080,
-        server: useLocalhostInCORS ? "http" : "https",
-        proxy: useLocalhostInCORS
-            ? []
-            : [
-                  {
-                      // This proxies calls from the browser to the configured Foundry instance
-                      target: process.env.API_PROXY_TARGET_URL,
-                      context: ["/multipass/api/**", "/api/**"],
-                      changeOrigin: true,
-                      secure: true,
-                  },
-              ],
     },
 };
