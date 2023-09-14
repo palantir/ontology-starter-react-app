@@ -17,7 +17,7 @@ A simple skeleton application to get you started on React/TypeScript development
     3. Add `http://localhost:8080/auth/callback` as a redirect URL when asked for one
     4. If you know where your application is getting deployed, you can add your production URL as well: `https://example.app.com/auth/callback`
 1. Follow the instructions in the Foundry Developer Console to generate and then install your application's Ontology SDK via the application-specific NPM registry
-1. Run `mv .env.development.no-cors.sample .env.development` to start setting up your environment variables, and fill in the fields marked with `<>`
+1. Run `mv .env.development.sample .env.development` to start setting up your environment variables, and fill in the fields marked with `<>`
 
     > Note: You can find your Client ID in the **Permissions & OAuth** page or in the **Getting started guide** inside your application's API documentation.
 
@@ -59,7 +59,7 @@ export NODE_EXTRA_CA_CERTS=/path/to/your/cert.pem
 If you do not have permission to do so and can't get Foundry Admin to approve it you can use the following setup:
 
 1. Add `https://localhost:8080/auth/callback` as a redirect URL in the Permission & OAuth tab on the left menu.
-1. Run `mv .env.development.sample .env.development` to start setting up your environment variables, and fill in the fields marked with `<>`
+1. Run `mv .env.development.no-core.sample .env.development` to start setting up your environment variables, and fill in the fields marked with `<>`
 1. Add the following section to your `devServer: ` section in the webpack.config.js file, after `port: 8080,`
 
 ```javaScript
@@ -78,3 +78,4 @@ If you do not have permission to do so and can't get Foundry Admin to approve it
 ```
 
 4. Test your application by running `npm run dev` and visiting https://localhost:8080 (note HTTPS and not HTTP)
+   >Note you might get a security warning like "Your connection is not private" which is expected as we are using https. 
