@@ -28,7 +28,7 @@
             "dom"
         ],
         "module": "esnext",
-        "moduleResolution": "node",
+        "moduleResolution": "nodenext",
         "noFallthroughCasesInSwitch": true,
         "noImplicitAny": true,
         "outDir": "../dist",
