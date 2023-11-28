@@ -35,7 +35,7 @@ A simple skeleton application to get you started on React/TypeScript development
     1. [GitHub Actions](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
 1. Run `mv .env.production.sample .env.production` to start setting up your environment variables, and fill in the fields marked with `<>`
 
-1. Run `npm run build` or `npm run build-win` if you are running on Windows machine.
+1. Run `npm run build` or `npm run build-windows` if you are running on Windows machine.
 1. Upload the resulting `dist/` directory to your hosting solution.
 
 ## Troubleshooting
