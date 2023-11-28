@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "webpack serve",
         "build": "NODE_ENV=production webpack",
-        "build-win": "set NODE_ENV=production webpack",
+        "build-windows": "set NODE_ENV=production webpack",
         "lint": "run-p lint:*",
         "lint:eslint": "eslint 'src/**/*.ts*'",
         "lint:prettier": "prettier src/**/*.ts*",
