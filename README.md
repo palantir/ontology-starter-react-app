@@ -12,7 +12,7 @@ A simple skeleton application to get you started on React/TypeScript development
 1. Copy or make a fork of this repository (you can delete `.policy.yml`)
 1. Run `npm install`
 1. Create an application via the Foundry Developer Console with the configuration below. Once the application has been created, come back to these instructions.
-    1. Follow the instructions in [Configure CORS](https://www.palantir.com/docs/foundry/administration/configure-cors/index.html) to add  `http://localhost:8080` to your CORS policy in Control Panel.
+    1. Follow the instructions in [Configure CORS](https://www.palantir.com/docs/foundry/administration/configure-cors/index.html) to add `http://localhost:8080` to your CORS policy in Control Panel.
     2. Select **client facing application** (creates a public client) when asked what type of application you're building. Creating a confidential client means you **cannot** login through the browser, and this cannot be changed after creating the app.
     3. Add `http://localhost:8080/auth/callback` as a redirect URL when asked for one
     4. If you know where your application is getting deployed, you can add your production URL as well: `https://example.app.com/auth/callback`
@@ -35,7 +35,7 @@ A simple skeleton application to get you started on React/TypeScript development
     1. [GitHub Actions](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository)
 1. Run `mv .env.production.sample .env.production` to start setting up your environment variables, and fill in the fields marked with `<>`
 
-1. Run `npm run build`
+1. Run `npm run build` or `npm run build-windows` if you are running on Windows machine.
 1. Upload the resulting `dist/` directory to your hosting solution.
 
 ## Troubleshooting
@@ -78,4 +78,4 @@ If you do not have permission to do so and can't get Foundry Admin to approve it
 ```
 
 4. Test your application by running `npm run dev` and visiting https://localhost:8080 (note HTTPS and not HTTP)
-   >Note you might get a security warning like "Your connection is not private" which is expected as we are using https. 
+    > Note you might get a security warning like "Your connection is not private" which is expected as we are using https.
