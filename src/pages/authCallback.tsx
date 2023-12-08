@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { client } from "../utils/client";
+import { PublicClientAuth } from "@ontology-starter/sdk";
 
 /**
  * Component to render at `/auth/callback`
@@ -11,7 +12,7 @@ export const AuthCallback: React.FC = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        client.auth
+        (client.auth as PublicClientAuth)
             .signIn()
             .then(() => navigate("/"))
             .catch((error: any) => setError(error.message ?? error));
