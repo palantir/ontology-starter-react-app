@@ -27,8 +27,8 @@
             "esnext.intl",
             "dom"
         ],
-        "module": "esnext",
-        "moduleResolution": "nodenext",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "noFallthroughCasesInSwitch": true,
         "noImplicitAny": true,
         "outDir": "../dist",

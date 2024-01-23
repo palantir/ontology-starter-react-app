@@ -1,5 +1,5 @@
 // Replace the package name with your application's package name instead.
-import { FoundryClient, PublicClientAuth } from "@ontology-starter/sdk";
+import { FoundryClient, PublicClientAuth } from "@kk-osdk-dev/sdk";
 
 /**
  * Initialize the client to interact with the Ontology SDK
