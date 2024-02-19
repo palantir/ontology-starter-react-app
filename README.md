@@ -59,7 +59,7 @@ export NODE_EXTRA_CA_CERTS=/path/to/your/cert.pem
 If you do not have permission to do so and can't get Foundry Admin to approve it you can use the following setup:
 
 1. Add `https://localhost:8080/auth/callback` as a redirect URL in the Permission & OAuth tab on the left menu.
-1. Run `mv .env.development.no-core.sample .env.development` to start setting up your environment variables, and fill in the fields marked with `<>`
+1. Run `mv .env.development.no-cors.sample .env.development` to start setting up your environment variables, and fill in the fields marked with `<>`
 1. Add the following section to your `devServer: ` section in the webpack.config.js file, after `port: 8080,`
 
 ```javaScript
